@@ -69,6 +69,7 @@ services:
       - DB_POSTGRESDB_PASSWORD=tami0706
       - QUEUE_MODE=redis
       - QUEUE_REDIS_HOST=redis
+      - WEBHOOK_TUNNEL_URL=http://n8n.nutritamilivalle.com.br:5678
     volumes:
       - n8n_data:/home/node/.n8n
 
