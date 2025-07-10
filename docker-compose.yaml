@@ -48,6 +48,22 @@ services:
     expose:
       - 5432
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/certs:/etc/letsencrypt
+      - ./nginx/www:/var/www/certbot
+    depends_on:
+      - n8n
+    networks:
+      - evolution-net
+
   n8n:
     image: n8nio/n8n
     container_name: n8n
@@ -69,10 +85,10 @@ services:
       - DB_POSTGRESDB_PASSWORD=tami0706
       - QUEUE_MODE=redis
       - QUEUE_REDIS_HOST=redis
-      - WEBHOOK_TUNNEL_URL=http://n8n.nutritamilivalle.com.br:5678
+      - WEBHOOK_TUNNEL_URL=https://n8n.nutritamilivalle.com.br
       - N8N_HOST=n8n.nutritamilivalle.com.br
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=http
+      - N8N_PORT=443
+      - N8N_PROTOCOL=https
     volumes:
       - n8n_data:/home/node/.n8n
 
