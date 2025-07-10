@@ -87,7 +87,7 @@ services:
       - QUEUE_REDIS_HOST=redis
       - WEBHOOK_TUNNEL_URL=https://n8n.nutritamilivalle.com.br
       - N8N_HOST=n8n.nutritamilivalle.com.br
-      - N8N_PORT=443
+      - N8N_PORT=5678
       - N8N_PROTOCOL=https
     volumes:
       - n8n_data:/home/node/.n8n
