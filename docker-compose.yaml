@@ -52,6 +52,8 @@ services:
     image: n8nio/n8n
     container_name: n8n
     restart: always
+    depends_on:
+      - api
     ports:
       - "5678:5678"
     networks:
@@ -69,8 +71,8 @@ services:
       - DB_POSTGRESDB_PASSWORD=tami0706
       - QUEUE_MODE=redis
       - QUEUE_REDIS_HOST=redis
-      - WEBHOOK_TUNNEL_URL=http://54.233.23.143:5678
-      - N8N_HOST=54.233.23.143
+      - WEBHOOK_TUNNEL_URL=http://54.232.23.18:5678
+      - N8N_HOST=54.232.23.18
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
     volumes:
