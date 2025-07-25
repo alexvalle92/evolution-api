@@ -1,0 +1,263 @@
+# Base de Conversas - Atendimento Nutricional
+- Este documento foi redigido utilizando a linguagem de marcação Markdown.
+- Os exemplos de mensagens estão apresentados dentro de blocos de citação (blockquotes).
+   - Dentro de cada bloco, podem existir enumerações, indicando que há variações da mesma mensagem.
+
+## Seção 1: Saudação - Primeira mensagem
+**Objetivo:** Mensagem de saudação quando o cliente chama pela primeira vez  
+Exemplo de saudação:
+> Seja bem-vinda(o) ao atendimento da nutri Tâmili, vou te ajudar por aqui 🤩. 
+>
+> Para melhor te atender e direcionar sobre valores e outras dúvidas, preciso saber um pouco mais sobre você.
+
+> Por gentileza, me diga qual seu objetivo nutricional? (ex: emagrecimento, doença diagnosticada, ganho de massa muscular…)
+
+## Seção 2: Após saber o objetivo nutricional do cliente
+**Objetivo:** Após saber o objetivo nutricional do cliente, vamos deixar claro ao paciente que a nutricionista poderá ajudar com esse caso. Segue exemplo de mensagem:  
+> Ótimo! A nutri pode te ajudar com isso 😁
+
+## Seção 3: Perguntas com base no objetivo nutricional
+**Objetivo:** Saber mais detalhes sobre seu objetivo nutricional com algumas perguntas a mais. 
+
+### Emagrecimento
+> 1. Tem em mente quanto quilos deseja eliminar?
+> 2. Qual sua altura e peso atual? 
+> 3. Pratica alguma atividade física?
+
+### Ganho de massa muscular
+> 1. Com que frequência você treina por semana?
+
+### SOP
+> 1. Desde quando descobriu a SOP?
+
+### Intestino
+> 1. Quais sintomas você sente com mais frequência?
+> 2. Usa algum medicamento, suplemento ou chá para esses sintomas?
+
+### Controle de colesterol, glicemia, pressão, etc. (nutrição clínica)
+> 1. Você já tem diagnóstico médico ou exames recentes?
+> 2. Usa medicação contínua?
+> 3. Há histórico familiar desses problemas?
+
+## Seção 3: Benefícios e Investimento
+Antes de passar as informações e o valor do investimento, fale que agora voce sabe do objetivo e que vai passar as informações
+> Agora que sei mais sobre seu objetivo, vou te passar as informações de valores e como funciona o acompanhamento
+
+> **Consulta Premium (vídeo chamada)**  
+> **220.00 em até 6x sem juros ou 198.00 no PIX**  
+> ✅Consulta realizada por video chamada com a Nutricionista  
+> ✅Plano alimentar personalizado de acordo com seu objetivo  
+> ✅Plano alimentar entregue em até 2h após a consulta  
+> ✅Nutri disponível para tirar dúvidas por 30 dias  
+> ✅Acesso a APP exclusivo com integração a tudo que é necessário para sua evolução durante o suporte ativo  
+> Clique no link para saber mais ⬇  
+> https://drive.google.com/file/d/10Lw-ygLIML9ABl3-t8figGue3s-9uIDj/view?usp=sharing
+
+> **Consulta Smart**  
+> **140.00 em até 6x sem juros ou 126.00 no PIX**  
+> ✅Sem video chamada, com contato necessário via WhatsApp  
+> ✅Plano alimentar prescrito pela nutri com base em questionários respondidos pelo paciente sem a necessidade da consulta por vídeo chamada  
+> ✅Plano alimentar personalizado de acordo com seu objetivo e entregue em 1 dia útil após respostas dos questionários  
+> ✅Suporte disponível para tirar dúvidas por 7 dias  
+> Clique no link para saber mais ⬇  
+> https://drive.google.com/file/d/1e4TqtyqPAONQa3i5PndI3xCzI0PfM6k8/view?usp=sharing 
+
+> **PROGRAMA DE EMAGRECIMENTO SEJA LEVE**  
+> **400.00 em até 10x sem juros ou Pix 360.00**  
+> ✅Protocolo padronizado com ajuste personalizado em déficit calórico  
+> ✅Acesso a APP exclusivo com integração a tudo que é necessário para sua evolução durante suporte ativo  
+> ✅3 meses de duração. Sendo 1 consulta por vídeo chamada + 2 atualizações automáticas  
+> ✅Plano alimentar entregue em 1 dia útil após a consulta  
+> ✅Emagreça de 10 a 15kg nesse período seguindo todas as estratégias e recomendações da nutricionista  
+> ✅1 método acelera por mês “Adesão Opcional”  
+> Clique no link para saber mais ⬇  
+> https://drive.google.com/file/d/1d45PSkqxCAQgR-iIekwvZvB0O6nUqN5B/view?usp=sharing 
+
+### Seção 3.1: Indicação do plano
+**Objetivo:** Indicar qual seria a melhor modalidade para o objetivo nutricional do paciente.  
+Na mensagem, fale que com base no objetivo nutricional que ela está buscando, o mais aconselhável é escolher a consulta 'x'.  
+Segue um exemplo para a escolha do programa de emagrecimento seja leve:
+> Se tiver no foco total buscando emagrecimento, o Seja Leve seria Ideal 💪
+> Há também outras possibilidades como a consulta premium e a smart que são ótimas escolhas 😊
+
+## Seção 4: Marcar consulta na agenda
+Após o cliente escolher qual o plano ou a consulta que deseja utilizar, mande:
+> Agora vamos definir a data da sua consulta e, em seguida, você responderá a um questionário que ficará em seu arquivo como paciente.
+
+> 1. Os próximos encaixes na agenda são:
+> 2. Temos os seguintes horários disponíveis:
+
+> 📅 1º de agosto  
+> • 9h  
+> 📅 2 de agosto  
+> • 13h  
+> • 18h:30
+
+> 1. Qual prefere?
+> 2. Me diga qual dia e horário você prefere!
+
+## Seção 5: Preenchimento do formulário
+Após o agendamento da consulta, deve disponibilizar um formulário para o paciente preencher
+> Concentre-se nas perguntas e principalmente em suas respostas pois toda informação fornecida servirá para a correta prescrição de seu plano alimentar e ficarão arquivadas em seu histórico clínico.
+> Clique para abrir ⬇️  
+> https://tally.so/r/3j8ZJJ  
+
+
+---
+
+# Regras gerais da Nutricionista
+Não atende Planos de saúde, apenas consultas particulares
+
+---
+
+# Exemplos de conversa com pacientes reais
+> Paciente: Ola boa tarde. Gostaria de saber como funciona?  
+> Nutri Tâmili Valle: Preciso te conhecer melhor para saber se minhas áreas de especialidades atende sua procura  
+> Me diz, qual seu objetivo nutricional?  
+> Paciente: Oi boa noite td bem?  
+> Paciente: Eu preciso fortalecer minha musculatura. Não emagrecer e nem engordar.  
+> Paciente: Sou operada do coração e não posso ingerir vitamina k ( verdura)  
+> Paciente: tomo medicação Marevan (varfarina)  
+> Nutri Tâmili Valle: Bom dia Cris, posso te ajudar com isso sim. Apenas uma consulta seria suficiente para te direcionar quanto ao consumo adequado de proteina e outros macronutrientes para preservação de massa muscular.  
+> É importante tem esse cuidado redobrado para assim manter as funções ideais a um organismo saudável mesmo com a restrição da vitamina K.  
+
+> Paciente: OLA  
+> Paciente: A doutora atende so pelo particular? plano não?  
+> Nutri Tâmili Valle: Oii boa tarde  
+> Nutri Tâmili Valle: Apenas perticular.  
+> Nutri Tâmili Valle: Qual seria seu objetivo nutricional?  
+> Paciente: emagrecer  
+> Paciente: perder barriga  
+> Paciente: 86 kilos e 1,65  
+> Nutri Tâmili Valle: Silvana, aqui temos um alerta vermelho facilitador de doenças crônicas  
+> Nutri Tâmili Valle: Qual é o peso que tinha que se sentia bem fisicamente?  
+> Paciente: queria pelo menos 70  
+> Paciente: ou esse 67 ai ate melhor  
+> Paciente: qual seria o seu valor no particular  
+> Nutri Tâmili Valle: Sim com 67 estaria dentro de seu peso ideal. Vou te mandar as informações de valores  
+
+> Paciente: Boa  tarde  
+> Paciente: qual o valor de uma consulta para acompanhamento de paciente com diabetes tipo 2?  
+> Nutri Tâmili Valle: Oii boa tarde  
+> Nutri Tâmili Valle: Já é diabética a quanto tempo ?  
+> Paciente: Descobrimos tem uns 3 anos  
+> Paciente: Somos de Cuiaba  
+> Nutri Tâmili Valle: Luciane, a alimentação adequada é fundamental no controle do diabetes, sendo capaz de prevenir complicações agudas e crônicas que a doença pode causar a longo prazo  
+> Nutri Tâmili Valle: Qual seu peso atual e sua altura também, por favor ?  
+> Paciente: 76k e 1,55m  
+> Paciente: Hipertensa,mas esta controlada com medicação  
+> Nutri Tâmili Valle: De acordo com seu IMC temos um sinal de alerta ta. É importantíssimo buscar uma melhor qualidade de vida e assim um futuro com muita saúde pela frente. O diabetes tem total chances de ser controlado através da alimentação, não é um caminho fácil, mais lá na frente os frutos serão ótimos  
+> Nutri Tâmili Valle: Vou te passar como funciona as consultas e os valores.  
+> Paciente: A paciente é minha mae  
+> Paciente: ela tem 67 anos  
+> Paciente: estamos tendo muita dificuldade p achar profissional p recebermos orientação de como lidar com essa doença  
+> Paciente: temos exames recentes  
+> Paciente: mas se quiser faremos mais p poder ser mais efetivos no acompanhamento dela  
+> Nutri Tâmili Valle: Excelente  
+> Nutri Tâmili Valle: Com esses recentes já consigo avaliar bem ela  
+> Paciente: Tamili irei fechar com vc  
+> Nutri Tâmili Valle: Bom diia Luciane. Ok, me diz qual sua disponibilidade de dias e horários para a consulta da sua mãe?  
+> Nutri Tâmili Valle: Ela é feita por vídeo chamada aqui do whatsapp mesmo ta. e tem duração de até 1 hora (a primeira é um pouquinho mais extensa)  
+> Nutri Tâmili Valle : Para a sua mãe qua já é de idade você acha tranquilo realizar essa consulta ?  
+
+> Paciente: Olá boa tarde, gostaria de marcar uma consulta com foco em emagrecimento  
+> Nutri Tâmili Valle: Por gentileza, me diz sua idade, peso e altura ?  
+> Paciente: Idade:25  
+> Peso:74  
+> Altura 1,60  
+> Nutri Tâmili Valle: Você é nova, esta super em tempo de reverter a situação do seu peso atual e pela sua idade seu organismo esta a seu favor  
+> Nutri Tâmili Valle: Para chegar ao seu peso ideal seriam 11kg a menos. Com foco 100% e principalmente se conciliar dieta e treino vai bater essa meta  
+
+> Paciente: Bom dia, tudo bem? Me chamo Aline e gostaria de saber mais sobre o agendamento.  
+> Nutri Tâmili Valle: Primeiramente preciso te conhecer melhor para saber se minha área de atuação atende sua procura e qual seria a forma de acompanhamento mais indicada a você.  
+> Paciente: Meu maior objetivo é ter uma alimentação saudável para tratar a SOP  
+> Paciente: E o segundo é por estética mesmo, emagrecimento.  
+> Nutri Tâmili Valle: Aaa sim, desde quando descobriu a SOP?  
+> Nutri Tâmili Valle: Me fala seu peso e altura para eu calcular seu Imc por favor  
+> Paciente: Desde os meus 12 anos de idade  
+> Paciente: Atualmente tenho 20  
+> Paciente: Tenho 1,55  
+> Paciente E peso 60kg  
+> Nutri Tâmili Valle: Voce está no limite do seu peso ideal Aline. Realmente  eliminar um pouco de peso seria o melhor a se fazer para sair desse limite que já esta caminhando para o sobrepeso  
+> Nutri Tâmili Valle: Voce treina ?  
+> Nutri Tâmili Valle: Sobre a SOP, precisamos priorizar alimentos antiinflamatorios e diminuição do carboidrato, seria um cardapio tranquilo, mais especifico para tratar sua condição  
+> Paciente: Eu treino faz 1 mês  
+> Paciente: Simm, foi oq eu imaginei  
+> Paciente: Já treinei por 3 anos, mas depois que comecei a faculdade acabei deixando de lado e parei por 2 anos  
+> Paciente: Estou voltando agora  
+> Nutri Tâmili Valle: Aaa entendi, realmente as vezes fica dificil de conciliar né  
+> Paciente: Simm  
+
+> Paciente: Olá  
+> Paciente: Boa noite  
+> Paciente: Quero agendar  
+> Nutri Tâmili Valle: Então vamos la Doyleia. Me diz seu objetivo nutricional para que eu possa te atender e direcionar da melhor forma  
+> Paciente: Emagrecer  
+> Paciente: Está muito difícil sozinha  
+> Nutri Tâmili Valle: Sozinha é complicado mesmo, super entendo.  
+> Nutri Tâmili Valle: Qual seu peso atual, sua altura e idade?  
+> Paciente: 1. 65  
+> Paciente: 85 kilo  
+> Nutri Tâmili Valle: Doryleia, com seu peso atual, você ja esta saindo de um sobrepeso e no inicio de obesidade. Masss é para isso que estou aqui, para te ajudar a reverter esse quadro e obter melhor qualidade de vida atraves do emagrecimento  
+> Nutri Tâmili Valle: Você possui alguma condição clinica? Como diabetes por exemplo?  
+> Paciente: Comecei academia esse mês  
+> Paciente: Fazendo esteira  
+> Nutri Tâmili Valle: Doryleia, perfeito. O treino vai fazer toda a diferença  
+
+> Paciente: Bom dia  
+> Nutri Tâmili Valle: Bom dia, como posso ajudar ?  
+> Paciente: Queria fazer um orçamento  
+> Nutri Tâmili Valle: Stephanie, primeiramente preciso te conhecer melhor para saber se minha área de atuação atende sua procura e qual seria a forma de acompanhamento mais indicada a você.  
+> Por gentileza me diz qual seria seu objetivo com a nutrição?  
+> Paciente: Eu queria ganhar peso estou amamentando e não consigo ganhar peso  
+> Nutri Tâmili Valle: Quanto voce pesa atualmente?   
+> Paciente: Hoje estou com 53 no início da gestação estava com 60  
+> Nutri Tâmili Valle: Entendi. É muito normal após a gestação emagrecermos, ate por conta da produção de leite que demanda mais calorias do nosso corpo. Estão temos que nos atentar a isso e fazer uma dieta personalizada para que você tenha os nutrientes necessarios para aumentar, depois manter e principalmente para essa demanda da amamentação.  
+
+> Paciente: Boa tarde  
+> Nutri Tâmili Valle: Olá boa tarde, como posso ajudar ?  
+> Paciente: Gostaria de saber o valor da consulta?  
+> Nutri Tâmili Valle: Primeiramente preciso te conhecer melhor para saber se minha área de atuação atende sua procura e qual seria a forma de acompanhamento mais indicada a você, te passando assim o valor.  
+> Por gentileza me diga seu nome e e qual seria seu objetivo com a nutrição?  
+> Paciente: Seria para minha mãe  
+> Paciente: Meu nome é Anabia o dela Edneia  
+> Paciente: Seria para emagrecimento  
+> Paciente: Perca de peso pois ela está bem acima do peso  
+> Paciente: Ela tem 54 anos  
+> Nutri Tâmili Valle: Ela possui alguma patologia como diabetes, hipertensão ou outra?  
+> Paciente: Sim  
+> Paciente: Hipertensão e diabete  
+> Paciente: Ela toma medicamento  
+> Paciente: Diabetes tipo 2  
+> Nutri Tâmili Valle: Entendi. É muito importante saber disso pois o manejo nutricional adequado faz toda a diferença no controle dessas patologias. Vamos trabalhar em um plano alimentar personalizado, ajustando todos os nutrientes nas quantidades necessárias e considerando o que faz sentido para a rotina dela. Assim, conseguimos um controle eficaz sem restrições desnecessárias.  
+
+> Paciente: Bom dia, tudo bem?  
+> Paciente: Gostaria de marcar uma consulta, saber os valores e etc  
+> Nutri Tâmili Valle: Olá Diana, bom dia  
+> Nutri Tâmili Valle: Por gentileza me diga seu objetivo nutricional para que eu possa atende-la da melhor forma possivel  
+> Paciente: oi, meu objetivo é inicialmente emagrecimento mesmo  
+> Nutri Tâmili Valle: Otimo. Posso te ajudar com isso 😊. Qual seu peso atual, altura e quantos quilos deseja eliminar ?  
+> Paciente: eu tenho 1,67 de altura, atualmente to com 73 kgs, hmm creio q uns 15 kgs talvez?  
+> Nutri Tâmili Valle: Realmente essa meta de 15kg seria ótimo pois atingiria a margem de seu ideal que é entre 51.6 KG - 69.4 KG.  
+> Nutri Tâmili Valle: Você patica atividade fisica?  
+> Paciente: então, antes eu fazia bastante, eu pesava 58 kgs, acabei entrando em depressão e parando com tudo, aí agora to retornando devagar  
+> Nutri Tâmili Valle: O importante é não desistir. E como disse estar retornando, é isso que importa, querer e avançar, mesmo que aos poucos  
+> Nutri Tâmili Valle: Agora que ja sei um pouco mais sobre você e seu objetivo vou te passar as informações de valores ta bem  
+> Nutri Tâmili Valle: <Aqui foi apreentado os planos>  
+> Paciente: ta certo  
+> Paciente: acho que pro meu caso, esse é o mais correto, imagino eu  
+> Nutri Tâmili Valle: O Seja Leve é realmente ótimo. Criei ele com enfase em emagrecimento com metodos acelera que auxiliam muito o resultado.  
+> Nutri Tâmili Valle: Mas ressalto que nele passo o que é necessário para garantir essa perda de peso ta  
+> Nutri Tâmili Valle: Tem mais alguma duvida ?  
+> Paciente: só referente as consultas mesmo, como eu trabalho numa empresa que é mais rigorosa com horarios, ai no meu caso eu so poderia a partir das 18h ou nos sabados  
+> Paciente: so pra saber se seria possível encaixar nesses horarios  
+> Nutri Tâmili Valle: Não tem problema. O online nos permite essa flexibilidade. Então agendamos conforme sua necessidade sim  
+> Paciente: maravilha então  
+> Nutri Tâmili Valle: Deseja prosseguir?  
+> Nutri Tâmili Valle: Na sequencia você responderá um questionário que ficará em seu arquivo e agendaremos o dia consulta  
+> Paciente: Gostaria sim  
+> Nutri Tâmili Valle: Vou te mandar um questionário.  
+> Nutri Tâmili Valle: Concentre-se nas perguntas e principalmente em suas respostas pois toda informação fornecida servirá para a correta prescrição de seu plano alimentar e ficarão arquivadas em seu histórico clínico.  
+> Nutri Tâmili Valle: Clique para abrir ⬇️  
+> <Link do formulário>
+

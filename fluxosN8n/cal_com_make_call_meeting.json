@@ -1,0 +1,244 @@
+{
+  "name": "cal_com_make_call_meeting",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -860,
+        160
+      ],
+      "id": "34b612dc-4115-4fd3-bdf1-bc803ec3e333",
+      "name": "Execute Workflow Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "return { \n'response':$('HTTP Request').last().json,\n'error':$('Messages').last().json\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        180,
+        380
+      ],
+      "id": "01b70352-d04d-486c-a759-3979880843d2",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.api_url }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "={{ $json.cal_key }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"eventTypeId\":{{ $json.eventTypeId }},\n  \"start\": \"{{ $json.startTimeUTC }}\",\n  \"responses\": {\n    \"name\": \"{{ $json.name }}\",\n    \"email\": \"{{ $json.email }}\",\n    \"smsReminderNumber\": \"{{ $json.phone }}\",\n    \"location\": {\n      \"value\": \"{{ $json.phone }}\",\n      \"optionValue\": \"\"\n    }\n  },\n  \"timeZone\": \"America/Sao_Paulo\",\n  \"language\": \"pt-BR\",\n  \"title\": \"Consulta médica\",\n  \"description\": null,\n  \"status\": \"PENDING\",\n  \"metadata\": {}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -200,
+        220
+      ],
+      "id": "573bd6e6-52c5-4bff-b3dc-1343f61076a8",
+      "name": "HTTP Request",
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bb41e4e-1574-49d3-bfd2-783e2e2eaafe",
+              "name": "api_url",
+              "value": "https://api.cal.com/v1/bookings",
+              "type": "string"
+            },
+            {
+              "id": "04b28227-7506-4cf1-8837-3c617fa5e984",
+              "name": "cal_key",
+              "value": "cal_live_6b39c0cd4d124bf54957b02815f8e217",
+              "type": "string"
+            },
+            {
+              "id": "8ead661b-e929-4dfd-80e9-9060067737b3",
+              "name": "startTime",
+              "value": "={{ $json.query.startTime }}",
+              "type": "string"
+            },
+            {
+              "id": "d61a239e-fbe4-4741-96d7-7ab400ebc538",
+              "name": "eventTypeId",
+              "value": "2794561",
+              "type": "string"
+            },
+            {
+              "id": "178270d1-096d-4d85-ab50-1a912f597146",
+              "name": "name",
+              "value": "Nutri Tamili Valle",
+              "type": "string"
+            },
+            {
+              "id": "05b41346-bbe3-4fdb-bd40-d6fb5f47da27",
+              "name": "email",
+              "value": "={{ $json.query.email }}",
+              "type": "string"
+            },
+            {
+              "id": "5532d282-3cb4-4216-b0f5-fbbbab646db9",
+              "name": "phone",
+              "value": "={{ $json.query.phone }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -660,
+        100
+      ],
+      "id": "ad1e8bd7-571d-401b-8d5f-7080f959f0af",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8ba4f70-ef6a-4291-b532-aaad33e6e96b",
+              "name": "error",
+              "value": "={{ $json?.error.message }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": "={{ false }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        80
+      ],
+      "id": "5f1b8111-8867-43e2-ba6f-5ca2ddd9d8f3",
+      "name": "Messages"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Para cada item de entrada, adiciona 3 horas ao campo startTime\nreturn items.map(item => {\n  const startTime = item.json.startTime; // Obtém o campo startTime\n  const date = new Date(startTime); // Converte para um objeto Date\n  date.setHours(date.getHours() + 3); // Adiciona 3 horas\n  item.json.startTimeUTC = date.toISOString(); // Cria o campo startTimeUTC\n  return item; // Retorna o item atualizado\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -440,
+        100
+      ],
+      "id": "a029a198-a11b-4a3b-962b-8310985df869",
+      "name": "Code1"
+    }
+  ],
+  "pinData": {
+    "Execute Workflow Trigger": [
+      {
+        "json": {
+          "query": {
+            "phone": "86 98161 2061",
+            "email": "andre@aalencar.com.br",
+            "startTime": "2024-12-21T15:00:00.000Z"
+          }
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Messages": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "3c7fa1db-889e-46cf-8d5e-fefa5ee5757e",
+  "meta": {
+    "instanceId": "0edc957f945f7c5e3f60a156d24d75b76c819bfb0aaf1a7433fa7026bb55425b"
+  },
+  "id": "qTyPaT2NPevHHn6q",
+  "tags": [
+    {
+      "createdAt": "2025-07-11T18:15:53.096Z",
+      "updatedAt": "2025-07-11T18:15:53.096Z",
+      "id": "wDPLdPy1Zonj64Ij",
+      "name": "agendamento-n8n"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "name": "RAG Loader",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {
+          "queryName": "match_documents"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        220
+      ],
+      "id": "e3d81ffc-a889-4ea5-aa7b-7649e863245d",
+      "name": "Supabase Vector Store1",
+      "credentials": {
+        "supabaseApi": {
+          "id": "hefrxx28LBHniQk3",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.1,
+      "position": [
+        1540,
+        480
+      ],
+      "id": "ff82360a-70c5-4bd1-9aca-fc3cc90d5006",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "bBPWeFi6yvYuiser",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "loader": "textLoader",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        480
+      ],
+      "id": "887caa3f-87ea-44fa-afe0-c3aec097ecc0",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkSize": 500,
+        "chunkOverlap": 50,
+        "options": {
+          "splitCode": "markdown"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        520
+      ],
+      "id": "67694b5b-368a-46c0-a8ea-42fdeead690d",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 2
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1140,
+        240
+      ],
+      "id": "b51a06ae-765b-49dc-b92a-a512d91f4265",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "bucketName": "nutritamilivalle.com.br",
+        "fileKey": "n8n/conhecimento-estetica-odontologico.txt"
+      },
+      "type": "n8n-nodes-base.awsS3",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        240
+      ],
+      "id": "5514b9ac-9077-478a-912b-0eddc0d7c9a5",
+      "name": "Download a file",
+      "credentials": {
+        "aws": {
+          "id": "w7JQCxA3H3YeSSdR",
+          "name": "AWS account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Download a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download a file": {
+      "main": [
+        [
+          {
+            "node": "Supabase Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "76480ed7-0787-4b00-9ede-b90e2a687557",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0edc957f945f7c5e3f60a156d24d75b76c819bfb0aaf1a7433fa7026bb55425b"
+  },
+  "id": "6exOyJBFYYbn37p2",
+  "tags": [
+    {
+      "createdAt": "2025-07-11T18:15:53.096Z",
+      "updatedAt": "2025-07-11T18:15:53.096Z",
+      "id": "wDPLdPy1Zonj64Ij",
+      "name": "agendamento-n8n"
+    },
+    {
+      "createdAt": "2025-07-11T18:16:47.647Z",
+      "updatedAt": "2025-07-11T18:16:47.647Z",
+      "id": "hokhBDHNMOyoMHbX",
+      "name": "agendamentos-n8n-supabas"
+    }
+  ]
+}

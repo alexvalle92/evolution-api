@@ -1,0 +1,155 @@
+{
+  "name": "cal_com_delete_call_meeting",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        140
+      ],
+      "id": "160ca723-8fe6-4103-8026-ab221e098c4a",
+      "name": "Execute Workflow Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "return { \n'response':$('HTTP Request').all(),\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        180
+      ],
+      "id": "5c0729e2-922f-4689-b837-dfd8b3cb70bc",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "={{ $json.api_url }}/{{ $json.booking_id }}/cancel",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "={{ $json.cal_key }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        280,
+        0
+      ],
+      "id": "671eb569-d597-4a23-bc67-8df005da5f9f",
+      "name": "HTTP Request",
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bb41e4e-1574-49d3-bfd2-783e2e2eaafe",
+              "name": "api_url",
+              "value": "https://api.cal.com/v1/bookings",
+              "type": "string"
+            },
+            {
+              "id": "04b28227-7506-4cf1-8837-3c617fa5e984",
+              "name": "cal_key",
+              "value": "cal_live_6b39c0cd4d124bf54957b02815f8e217",
+              "type": "string"
+            },
+            {
+              "id": "d61a239e-fbe4-4741-96d7-7ab400ebc538",
+              "name": "eventTypeId",
+              "value": "1199706",
+              "type": "string"
+            },
+            {
+              "id": "d6c94e69-572f-4a96-a278-ec27df46d257",
+              "name": "booking_id",
+              "value": "={{ $json.query.booking_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d2e19ba9-f48a-4fe9-889f-c560d68bd9ee",
+      "name": "Config"
+    }
+  ],
+  "pinData": {
+    "Execute Workflow Trigger": [
+      {
+        "json": {
+          "query": {
+            "booking_id": "4958725"
+          }
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "1656d04e-af98-4f46-9449-bf68e62bd675",
+  "meta": {
+    "instanceId": "0edc957f945f7c5e3f60a156d24d75b76c819bfb0aaf1a7433fa7026bb55425b"
+  },
+  "id": "TqWyUCsJjQXRtr9p",
+  "tags": []
+}

@@ -1,0 +1,247 @@
+{
+  "name": "cal_com_get_horarios",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        80
+      ],
+      "id": "87aef830-144b-42d1-a936-98e0c8ebfc45",
+      "name": "Execute Workflow Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Recebe o JSON de slots como input\nconst agendaToda = $input.item.json.slots;\n\n// Obter as datas disponíveis em ordem crescente\nconst sortedDates = Object.keys(agendaToda).sort();\n\n// 1️⃣ Seleciona o primeiro dia (mais recente)\nconst firstDay = sortedDates[0];\nconst firstDaySlots = agendaToda[firstDay];\nconst firstSlot = firstDaySlots[0]; // pode escolher outro critério se quiser\n\n// 2️⃣ Encontrar o próximo dia com horário >= 13h\nlet secondDaySlot = null;\n\nfor (let i = 1; i < sortedDates.length; i++) {\n  const date = sortedDates[i];\n  const slots = agendaToda[date];\n\n  // Filtra horários >= 13h\n  const afternoonSlots = slots.filter(s => {\n    const hour = new Date(s.time).getHours();\n    return hour >= 13;\n  });\n\n  if (afternoonSlots.length > 0) {\n    // Escolhe 1 horário aleatório entre os da tarde\n    const randomIndex = Math.floor(Math.random() * afternoonSlots.length);\n    secondDaySlot = afternoonSlots[randomIndex];\n\n    // Adiciona a data como propriedade\n    secondDaySlot.date = date;\n    break;\n  }\n}\n\n// Organiza a saída formatada\nconst datasDisponiveis = [];\n\nif (firstSlot) {\n  datasDisponiveis.push({\n    date: firstDay,\n    time: firstSlot.time\n  });\n}\n\nif (secondDaySlot) {\n  datasDisponiveis.push({\n    date: secondDaySlot.date,\n    time: secondDaySlot.time\n  });\n}\n\nreturn [\n  {\n    agendaToda\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        460
+      ],
+      "id": "cd565809-94bd-4cf6-85fc-9fc23fa81388",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "url": "https://api.cal.com/v1/slots",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "={{ $json.cal_key }}"
+            },
+            {
+              "name": "startTime",
+              "value": "={{ $('Config').item.json.startTime }}"
+            },
+            {
+              "name": "endTime",
+              "value": "={{ $('Config').item.json.endTime }}"
+            },
+            {
+              "name": "eventTypeId",
+              "value": "={{ $json.eventTypeId }}"
+            },
+            {
+              "name": "timeZone",
+              "value": "America/Sao_Paulo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        260,
+        320
+      ],
+      "id": "986f919f-bd4f-4d61-b029-a9be3d35258e",
+      "name": "HTTP Request",
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bb41e4e-1574-49d3-bfd2-783e2e2eaafe",
+              "name": "api_url",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "04b28227-7506-4cf1-8837-3c617fa5e984",
+              "name": "cal_key",
+              "value": "cal_live_6b39c0cd4d124bf54957b02815f8e217",
+              "type": "string"
+            },
+            {
+              "id": "8ead661b-e929-4dfd-80e9-9060067737b3",
+              "name": "startTime",
+              "value": "={{ $json.query.startTime }}",
+              "type": "string"
+            },
+            {
+              "id": "775c1304-2a8c-4bfa-9dd4-0229c4227016",
+              "name": "endTime",
+              "value": "={{ $json.query.endTime }}",
+              "type": "string"
+            },
+            {
+              "id": "d61a239e-fbe4-4741-96d7-7ab400ebc538",
+              "name": "eventTypeId",
+              "value": "2794561",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -220,
+        220
+      ],
+      "id": "684c18f1-8dae-487f-af2e-0e7faac5745a",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "cd26df80-7ca5-4f47-95ab-800b806ecdda",
+              "leftValue": "={{ $json.startTime }}",
+              "rightValue": "=null",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "4af7e954-1604-4368-b183-71f2c384af0d",
+              "leftValue": "={{ $json.endTime }}",
+              "rightValue": "=null",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -40,
+        220
+      ],
+      "id": "ea20d5af-9cbb-4125-8ef2-b7469ed71325",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        240,
+        160
+      ],
+      "id": "21db0043-a2b7-47ce-8893-0d01aa926675",
+      "name": "No Operation, do nothing"
+    }
+  ],
+  "pinData": {
+    "Execute Workflow Trigger": [
+      {
+        "json": {
+          "query": "2024-12-20T00:00:00.000Z"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "688cc549-464b-4d03-9c61-079b89752bd6",
+  "meta": {
+    "instanceId": "0edc957f945f7c5e3f60a156d24d75b76c819bfb0aaf1a7433fa7026bb55425b"
+  },
+  "id": "SFyMCXesveb2I73j",
+  "tags": []
+}

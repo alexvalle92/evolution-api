@@ -1,0 +1,474 @@
+{
+  "name": "Mensagens Diarias",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 8,
+              "triggerAtMinute": 18
+            },
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 18,
+              "triggerAtMinute": 30
+            },
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                5
+              ],
+              "triggerAtHour": 15
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -340,
+        -300
+      ],
+      "id": "bf200b00-5de2-4abd-8d29-b05b98d7c264",
+      "name": "Primeira Semana"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                2
+              ],
+              "triggerAtHour": 19,
+              "triggerAtMinute": 30
+            },
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                4,
+                6
+              ],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -340,
+        20
+      ],
+      "id": "cbfe1b3e-dfa4-49df-9bb2-e5d265f8c6cc",
+      "name": "Segunda Semana"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e87a4bde-81a0-4e06-a544-52fb5460e163",
+              "leftValue": "={{ $json.executar }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        520,
+        -120
+      ],
+      "id": "830f72b1-4f96-4dd2-ad03-8de537934726",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Esse script define se é uma semana par ou ímpar\nconst data = new Date();\nconst oneJan = new Date(data.getFullYear(),0,1);\nconst numberOfDays = Math.floor((data - oneJan) / (24 * 60 * 60 * 1000));\nconst weekNumber = Math.ceil(( data.getDay() + 1 + numberOfDays) / 7);\n\n// Define se é semana 1 (ímpar) ou 2 (par)\nconst isSemana1 = weekNumber % 2 === 1;\nconst diaSemana = data.getDay();\n\nreturn [\n  {\n    json: {\n      executar: isSemana1,\n      diaSemana: diaSemana\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        -300
+      ],
+      "id": "aba2f8fe-ec52-44ab-9f11-7a49e4d7238b",
+      "name": "VerificaPrimeiraSemana"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Esse script define se é uma semana par ou ímpar\nconst data = new Date();\nconst oneJan = new Date(data.getFullYear(),0,1);\nconst numberOfDays = Math.floor((data - oneJan) / (24 * 60 * 60 * 1000));\nconst weekNumber = Math.ceil(( data.getDay() + 1 + numberOfDays) / 7);\n\n// Define se é semana 1 (ímpar) ou 2 (par)\nconst isSemana1 = weekNumber % 2 === 0;\nconst diaSemana = data.getDay();\n\nreturn [\n  {\n    json: {\n      executar: isSemana1,\n      diaSemana: diaSemana\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        20
+      ],
+      "id": "4a3cfa96-d54a-4ec3-95d2-5862ba8489ad",
+      "name": "VerificaSegundaSemana"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d3ce199f-180a-4e1c-98d0-2fdef4da9bc1",
+              "name": "diaSemana",
+              "value": "={{ $json.diaSemana }}",
+              "type": "string"
+            },
+            {
+              "id": "906c2334-996e-4ec7-b462-fd78c9c7faa9",
+              "name": "executar",
+              "value": "={{ $json.executar }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        -120
+      ],
+      "id": "f56ed9fe-389a-4310-bbed-4ad207716d65",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "daily_messages",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "diaSemana",
+              "keyValue": "={{ $('Edit Fields').item.json.diaSemana }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -140
+      ],
+      "id": "357be7a6-ba3c-4758-8ae4-9ca6b6c3e032",
+      "name": "Get a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "hefrxx28LBHniQk3",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "tableId": "customers",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "active",
+              "condition": "is",
+              "keyValue": "true"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -160
+      ],
+      "id": "de849876-6068-40e1-bf26-0081beda2da3",
+      "name": "Get many rows",
+      "credentials": {
+        "supabaseApi": {
+          "id": "hefrxx28LBHniQk3",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1460,
+        -160
+      ],
+      "id": "18b6da57-4f8f-40f8-8e87-3c59fbf3f96c",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        -320
+      ],
+      "id": "13804162-8094-41be-a7c6-226baf400047",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://54.232.23.18:8080/message/sendText/{{ $json.evolution_api_instance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $json.evolution_api_key }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.phone }}"
+            },
+            {
+              "name": "text",
+              "value": "=*[Mensagem automática]*\n\n{{ $('Get a row').item.json.mensagem }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a41576fe-d01d-4f7c-be27-cc84d627bdc8",
+      "name": "Evolution API - HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9c00627-84a9-49a9-bc7e-d923a5918346",
+              "name": "output",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            },
+            {
+              "id": "44fd293f-0a32-4499-90fc-bffca5bb524b",
+              "name": "evolution_api_key",
+              "value": "429683C4C977415CAAFCCE10F7D57E11",
+              "type": "string"
+            },
+            {
+              "id": "8fd329d8-2237-4ad3-a496-ee49b5042fc5",
+              "name": "evolution_api_instance",
+              "value": "n8n-evolution",
+              "type": "string"
+            },
+            {
+              "id": "0e34f673-b6dc-4748-89d2-a178dfe91853",
+              "name": "phone",
+              "value": "={{ $json.phone }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1760,
+        -60
+      ],
+      "id": "7d979d5c-faa6-41f6-bda6-c576efc229fb",
+      "name": "SetConfig"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Segunda Semana": {
+      "main": [
+        [
+          {
+            "node": "VerificaSegundaSemana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Primeira Semana": {
+      "main": [
+        [
+          {
+            "node": "VerificaPrimeiraSemana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VerificaPrimeiraSemana": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VerificaSegundaSemana": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many rows": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a row": {
+      "main": [
+        [
+          {
+            "node": "Get many rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SetConfig",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SetConfig": {
+      "main": [
+        [
+          {
+            "node": "Evolution API - HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evolution API - HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "versionId": "5f3e7ef3-31e9-4bb3-b371-19dc69783369",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0edc957f945f7c5e3f60a156d24d75b76c819bfb0aaf1a7433fa7026bb55425b"
+  },
+  "id": "g7PFWKwIqBpFASZo",
+  "tags": []
+}
