@@ -12,10 +12,6 @@ Exemplo de saudação:
 
 > Por gentileza, me diga qual seu objetivo nutricional? (ex: emagrecimento, doença diagnosticada, ganho de massa muscular…)
 
-## Seção 2: Após saber o objetivo nutricional do cliente
-**Objetivo:** Após saber o objetivo nutricional do cliente, vamos deixar claro ao paciente que a nutricionista poderá ajudar com esse caso. Segue exemplo de mensagem:  
-> Ótimo! A nutri pode te ajudar com isso 😁
-
 ## Seção 3: Perguntas com base no objetivo nutricional
 **Objetivo:** Saber mais detalhes sobre seu objetivo nutricional com algumas perguntas a mais. 
 
@@ -40,9 +36,7 @@ Exemplo de saudação:
 > 3. Há histórico familiar desses problemas?
 
 ## Seção 3: Benefícios e Investimento
-Antes de passar as informações e o valor do investimento, fale que agora voce sabe do objetivo e que vai passar as informações
-> Agora que sei mais sobre seu objetivo, vou te passar as informações de valores e como funciona o acompanhamento
-
+Mensagem 1 Benefícios e Investimento: 
 > **Consulta Premium (vídeo chamada)**  
 > **220.00 em até 6x sem juros ou 198.00 no PIX**  
 > ✅Consulta realizada por video chamada com a Nutricionista  
@@ -51,8 +45,9 @@ Antes de passar as informações e o valor do investimento, fale que agora voce 
 > ✅Nutri disponível para tirar dúvidas por 30 dias  
 > ✅Acesso a APP exclusivo com integração a tudo que é necessário para sua evolução durante o suporte ativo  
 > Clique no link para saber mais ⬇  
-> https://drive.google.com/file/d/10Lw-ygLIML9ABl3-t8figGue3s-9uIDj/view?usp=sharing
+> linkSaibaMais: https://drive.google.com/file/d/10Lw-ygLIML9ABl3-t8figGue3s-9uIDj/view?usp=sharing
 
+Mensagem 2 Benefícios e Investimento: 
 > **Consulta Smart**  
 > **140.00 em até 6x sem juros ou 126.00 no PIX**  
 > ✅Sem video chamada, com contato necessário via WhatsApp  
@@ -60,8 +55,9 @@ Antes de passar as informações e o valor do investimento, fale que agora voce 
 > ✅Plano alimentar personalizado de acordo com seu objetivo e entregue em 1 dia útil após respostas dos questionários  
 > ✅Suporte disponível para tirar dúvidas por 7 dias  
 > Clique no link para saber mais ⬇  
-> https://drive.google.com/file/d/1e4TqtyqPAONQa3i5PndI3xCzI0PfM6k8/view?usp=sharing 
+> linkSaibaMais: https://drive.google.com/file/d/1e4TqtyqPAONQa3i5PndI3xCzI0PfM6k8/view?usp=sharing 
 
+Mensagem 3 Benefícios e Investimento: 
 > **PROGRAMA DE EMAGRECIMENTO SEJA LEVE**  
 > **400.00 em até 10x sem juros ou Pix 360.00**  
 > ✅Protocolo padronizado com ajuste personalizado em déficit calórico  
@@ -71,30 +67,7 @@ Antes de passar as informações e o valor do investimento, fale que agora voce 
 > ✅Emagreça de 10 a 15kg nesse período seguindo todas as estratégias e recomendações da nutricionista  
 > ✅1 método acelera por mês “Adesão Opcional”  
 > Clique no link para saber mais ⬇  
-> https://drive.google.com/file/d/1d45PSkqxCAQgR-iIekwvZvB0O6nUqN5B/view?usp=sharing 
-
-### Seção 3.1: Indicação do plano
-**Objetivo:** Indicar qual seria a melhor modalidade para o objetivo nutricional do paciente.  
-Na mensagem, fale que com base no objetivo nutricional que ela está buscando, o mais aconselhável é escolher a consulta 'x'.  
-Segue um exemplo para a escolha do programa de emagrecimento seja leve:
-> Se tiver no foco total buscando emagrecimento, o Seja Leve seria Ideal 💪
-> Há também outras possibilidades como a consulta premium e a smart que são ótimas escolhas 😊
-
-## Seção 4: Marcar consulta na agenda
-Após o cliente escolher qual o plano ou a consulta que deseja utilizar, mande:
-> Agora vamos definir a data da sua consulta e, em seguida, você responderá a um questionário que ficará em seu arquivo como paciente.
-
-> 1. Os próximos encaixes na agenda são:
-> 2. Temos os seguintes horários disponíveis:
-
-> 📅 1º de agosto  
-> • 9h  
-> 📅 2 de agosto  
-> • 13h  
-> • 18h:30
-
-> 1. Qual prefere?
-> 2. Me diga qual dia e horário você prefere!
+> linkSaibaMais: https://drive.google.com/file/d/1d45PSkqxCAQgR-iIekwvZvB0O6nUqN5B/view?usp=sharing 
 
 ## Seção 5: Preenchimento do formulário
 Após o agendamento da consulta, deve disponibilizar um formulário para o paciente preencher
@@ -111,6 +84,7 @@ Não atende Planos de saúde, apenas consultas particulares
 ---
 
 # Exemplos de conversa com pacientes reais
+### Mensagens de exemplo 1: 
 > Paciente: Ola boa tarde. Gostaria de saber como funciona?  
 > Nutri Tâmili Valle: Preciso te conhecer melhor para saber se minhas áreas de especialidades atende sua procura  
 > Me diz, qual seu objetivo nutricional?  
@@ -121,6 +95,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Nutri Tâmili Valle: Bom dia Cris, posso te ajudar com isso sim. Apenas uma consulta seria suficiente para te direcionar quanto ao consumo adequado de proteina e outros macronutrientes para preservação de massa muscular.  
 > É importante tem esse cuidado redobrado para assim manter as funções ideais a um organismo saudável mesmo com a restrição da vitamina K.  
 
+### Mensagens de exemplo 2: 
 > Paciente: OLA  
 > Paciente: A doutora atende so pelo particular? plano não?  
 > Nutri Tâmili Valle: Oii boa tarde  
@@ -136,6 +111,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Paciente: qual seria o seu valor no particular  
 > Nutri Tâmili Valle: Sim com 67 estaria dentro de seu peso ideal. Vou te mandar as informações de valores  
 
+### Mensagens de exemplo 3:
 > Paciente: Boa  tarde  
 > Paciente: qual o valor de uma consulta para acompanhamento de paciente com diabetes tipo 2?  
 > Nutri Tâmili Valle: Oii boa tarde  
@@ -160,6 +136,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Nutri Tâmili Valle: Ela é feita por vídeo chamada aqui do whatsapp mesmo ta. e tem duração de até 1 hora (a primeira é um pouquinho mais extensa)  
 > Nutri Tâmili Valle : Para a sua mãe qua já é de idade você acha tranquilo realizar essa consulta ?  
 
+### Mensagens de exemplo 4:
 > Paciente: Olá boa tarde, gostaria de marcar uma consulta com foco em emagrecimento  
 > Nutri Tâmili Valle: Por gentileza, me diz sua idade, peso e altura ?  
 > Paciente: Idade:25  
@@ -168,6 +145,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Nutri Tâmili Valle: Você é nova, esta super em tempo de reverter a situação do seu peso atual e pela sua idade seu organismo esta a seu favor  
 > Nutri Tâmili Valle: Para chegar ao seu peso ideal seriam 11kg a menos. Com foco 100% e principalmente se conciliar dieta e treino vai bater essa meta  
 
+### Mensagens de exemplo 5:
 > Paciente: Bom dia, tudo bem? Me chamo Aline e gostaria de saber mais sobre o agendamento.  
 > Nutri Tâmili Valle: Primeiramente preciso te conhecer melhor para saber se minha área de atuação atende sua procura e qual seria a forma de acompanhamento mais indicada a você.  
 > Paciente: Meu maior objetivo é ter uma alimentação saudável para tratar a SOP  
@@ -188,6 +166,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Nutri Tâmili Valle: Aaa entendi, realmente as vezes fica dificil de conciliar né  
 > Paciente: Simm  
 
+### Mensagens de exemplo 6:
 > Paciente: Olá  
 > Paciente: Boa noite  
 > Paciente: Quero agendar  
@@ -204,6 +183,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Paciente: Fazendo esteira  
 > Nutri Tâmili Valle: Doryleia, perfeito. O treino vai fazer toda a diferença  
 
+### Mensagens de exemplo 7:
 > Paciente: Bom dia  
 > Nutri Tâmili Valle: Bom dia, como posso ajudar ?  
 > Paciente: Queria fazer um orçamento  
@@ -214,6 +194,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Paciente: Hoje estou com 53 no início da gestação estava com 60  
 > Nutri Tâmili Valle: Entendi. É muito normal após a gestação emagrecermos, ate por conta da produção de leite que demanda mais calorias do nosso corpo. Estão temos que nos atentar a isso e fazer uma dieta personalizada para que você tenha os nutrientes necessarios para aumentar, depois manter e principalmente para essa demanda da amamentação.  
 
+### Mensagens de exemplo 8:
 > Paciente: Boa tarde  
 > Nutri Tâmili Valle: Olá boa tarde, como posso ajudar ?  
 > Paciente: Gostaria de saber o valor da consulta?  
@@ -231,6 +212,7 @@ Não atende Planos de saúde, apenas consultas particulares
 > Paciente: Diabetes tipo 2  
 > Nutri Tâmili Valle: Entendi. É muito importante saber disso pois o manejo nutricional adequado faz toda a diferença no controle dessas patologias. Vamos trabalhar em um plano alimentar personalizado, ajustando todos os nutrientes nas quantidades necessárias e considerando o que faz sentido para a rotina dela. Assim, conseguimos um controle eficaz sem restrições desnecessárias.  
 
+### Mensagens de exemplo 9:
 > Paciente: Bom dia, tudo bem?  
 > Paciente: Gostaria de marcar uma consulta, saber os valores e etc  
 > Nutri Tâmili Valle: Olá Diana, bom dia  
